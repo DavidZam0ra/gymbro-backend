@@ -1,6 +1,14 @@
-const supabase = require('../../supabaseClient');
+import supabase from '../../supabaseClient.js';
 
 class AuthService {
+  /**
+   * Register user
+   *
+   * @param {*} email
+   * @param {*} password
+   * @return {*} 
+   * @memberof AuthService
+   */
   async registerUser(email, password) {
     const { data, error } = await supabase.auth.signUp({ email, password });
 
@@ -11,6 +19,14 @@ class AuthService {
     return data.user;
   }
 
+  /**
+   * Login user
+   *
+   * @param {*} email
+   * @param {*} password
+   * @return {*} 
+   * @memberof AuthService
+   */
   async loginUser(email, password) {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
@@ -22,4 +38,4 @@ class AuthService {
   }
 }
 
-module.exports = new AuthService();
+export default new AuthService();

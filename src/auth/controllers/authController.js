@@ -1,6 +1,13 @@
-const authService = require('../services/authService');
+import authService from '../services/authService.js';
 
 class AuthController {
+  /**
+   * Register user
+   *
+   * @param {*} req
+   * @param {*} res
+   * @memberof AuthController
+   */
   async registerUser(req, res) {
     try {
       const { email, password } = req.body;
@@ -11,6 +18,13 @@ class AuthController {
     }
   }
 
+  /**
+   * Login user
+   *
+   * @param {*} req
+   * @param {*} res
+   * @memberof AuthController
+   */
   async loginUser(req, res) {
     try {
       const { email, password } = req.body;
@@ -22,4 +36,4 @@ class AuthController {
   }
 }
 
-module.exports = new AuthController();
+export default new AuthController();
