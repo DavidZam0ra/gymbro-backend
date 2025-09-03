@@ -1,14 +1,27 @@
+version: "3.8"
+
 services:
+  mongo:
+    image: mongo:latest
+    container_name: gymbro-app
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
   backend:
     build: .
+    container_name: gymbro-backend
     ports:
       - "3000:3000"
     environment:
+      - PORT=3000
       - MONGO_URI=mongodb://mongo:27017/gymbro-app
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
     depends_on:
       - mongo
+    command: node index.js
 
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
+volumes:
+  mongo-data:

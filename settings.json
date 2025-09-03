@@ -1,0 +1,10 @@
+// TODO: Check if really works
+{
+    "editor.formatOnSave": true,
+    "eslint.enable": true,
+    "eslint.run": "onSave",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  }
+  
