@@ -16,7 +16,7 @@ class AuthService {
       throw new Error(error.message);
     }
 
-    return data.user;
+    return data;
   }
 
   /**
@@ -34,7 +34,7 @@ class AuthService {
       throw new Error(error.message);
     }
 
-    return data.user;
+    return data;
   }
 }
 
