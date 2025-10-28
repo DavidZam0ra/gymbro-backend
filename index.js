@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use('/auth', authRoutes);
 
 app.get('/test', (req, res) => {
-  res.json({ message: '¡Hola mundo desde el backend!' });
+  res.json({ message: '¡Hola mundooooooo!' });
 });
 
 const PORT = process.env.PORT || 3000;

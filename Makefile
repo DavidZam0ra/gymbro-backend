@@ -11,4 +11,7 @@ build:
 	docker-compose build
 
 run:
+	docker-compose exec backend npm run dev
+
+prod:
 	docker-compose exec backend npm start

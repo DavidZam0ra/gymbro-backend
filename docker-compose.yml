@@ -21,7 +21,10 @@ services:
       - SUPABASE_KEY=${SUPABASE_KEY}
     depends_on:
       - mongo
-    command: node index.js
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: npx nodemon index.js
 
 volumes:
   mongo-data:
